@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+    background-color: #fff;
+}
+body {
+    font-family: "Zen Maru Gothic";
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+
+a,
+p {
+    text-decoration: none;
+    text-align: center;
+}
+
+/*ヘッダー*/
+.header {
+    font-size: 3rem;
+}
+.header-box {
+    font-size: 3.5rem;
+    padding-bottom: .5rem;
+    background-color: #777777;
+}
+.Erulog {
+    font-weight: bolder;
+}
+
+/*
+SLIDE MENU
+================================================ */
+/* ----- ↓↓ 追加 ↓↓ ----- */
+/* 開閉ボタン */
+.btn-menu {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 4;
+    padding: .5rem 1rem;
+    border: 1px solid var(--brown);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    transition: .4s;
+}
+.btn-menu svg {
+    fill: var(--brown);
+    margin-top: .25rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+/* 閉じるボタン */
+#menu-close {
+    border: 1px solid var(--light-green);
+}
+#menu-close svg {
+    fill: var(--light-green);
+}
+
+/* スライドメニューパネル */
+#menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    padding: 8rem 2rem 2rem;
+    width: max(32vw, 20rem);
+    height: 100vh;
+    background-color: #333333;
+    box-shadow: 0 0 2rem var(--brown);
+    font-family: var(--oswald-font);
+    translate: 100vw;
+}
+.menu-list {
+    list-style: none;
+}
+.menu-list li {
+    margin: 1.5rem 0;
+    opacity: 0;
+    background-color: #777777;
+}
+.menu-list a {
+    color: var(--light-green);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+/*ヘッダー画像*/
+.test1 {
+    margin-top: .5rem;
+}
+
+
+
+
+/*メニュー*/
+.menu-box {
+    background-color: #333333;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+.menu {
+    display: inline-block;
+    font-size: .9rem;
+    background-color: #777777;
+    color: #fff;
+    margin: 2px;
+    padding: 8px;
+    transition: .5s;
+}
+.menu:hover {
+    scale: 1;
+}
+
+
+/*メイン記事*/
+.content {
+    margin-top: 0.5rem;
+}
+.center {
+    text-align: center;
+}
+.mainbox img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.t-content {
+    text-align: center;
+}
+
+/*フッター*/
+.fotter-profile {
+    background-color: #fff;
+    width: auto;
+}
+.profile-icon {
+    background-color: #fff;
+}
+.profile-icon img {
+    border-radius: 80px;
+    height: auto;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile-content {
+    background-color: #fff;
+}
+.content-h1 {
+    font-size: 2rem;
+}
+
+
+.div {
+    background-color: #777777;    
+    padding: 0.5rem;
+}
+.fotter-title {
+    font-size: 1.5rem;
+}
+
+/*デスクトップ版*/

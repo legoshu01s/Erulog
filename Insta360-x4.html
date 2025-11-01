@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ブログ</title>
+    <meta name="description" content="お名前を入力してください。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--ファビコン-->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!---リセットCSS-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!--Googleフォント-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+
+    <!--オリジナルCSS-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <header class="header">
+            <div class="header-box">
+                My Blog
+                    <!-- ナビゲーションメニュー ↓↓ 追加 ↓↓ -->
+            <nav>
+                <button id="menu-open" class="btn-menu">
+                    <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <title>メニューを開く</title>
+                        <path clip-rule="evenodd" d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z" fill-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div id="menu-panel">
+                    <button id="menu-close" class="btn-menu">
+                        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <title>メニューを閉じる</title>
+                            <path clip-rule="evenodd" d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4696-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z" fill-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <ul class="menu-list">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+            <div class="test1">
+                <a href="Insta360-x4.html">
+                    <img id="slideshow" src="images/maintenance.jpeg" alt="スライドショー">
+
+                    <script>
+                            // 画像の配列
+                        const images = [
+                            "images/maintenance.jpeg",
+                            "images/gadget-insta360x4.jpg"
+                    ];
+
+                    let index = 0; // 現在の画像番号
+                    const imgElement = document.getElementById("slideshow");
+
+                    // 10秒ごとに画像を切り替える
+                    setInterval(() => {
+                    index = (index + 1) % images.length; // 次の画像へ
+                    imgElement.style.opacity = 0; // フェードアウト
+
+                    setTimeout(() => {
+                        imgElement.src = images[index];
+                        imgElement.style.opacity = 1; // フェードイン
+                    }, 500);
+                    }, 10000); // 10000ミリ秒 = 10秒       
+                    </script>
+
+                </a>
+            </div>
+            <div class="menu-box">
+                <nav class="nav">
+                    <div class="grid">
+                        <a class="menu" href="it-science.html">IT/SIENCE</a>
+                        <a class="menu" href="gadget.html">ガジェット</a>
+                        <a class="menu" href="index.html">空きテナント</a>
+                        <a class="menu" href="cycle.html">自転車</a>
+                        <a class="menu" href="mountain.html">登山</a>
+                        <a class="menu" href="athor.html">その他</a>
+                    </div>
+                </nav>
+            </div>  
+        </header>
+
+        <div class="content">
+            <h1 class="center">Insta360 x4 を購入した話。</h1>
+            <div class="blogbox">
+                <p>
+                    <span class="date">
+                        <time class="time" datetime="2025-11-11">2025年11月11日</time>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="sns-top">
+            <ul>
+                <li class="twitter">
+                    <a rel="" onclick="" title="twitter">Twitter</a>
+                </li>
+                <li class="note">
+                    <a rel="" onclick="" title="note">note</a>
+                </li>
+                <li class="youtbe">
+                    <a rel="" onclick="" title="youtube">YouTube</a>
+                </li>
+                <li class="instagram">
+                    <a rel="" onclick="" title="instagram">Instagram</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mainbox">
+            <div class="mainbox-images">
+                <img src="images/gadget-insta360x4.jpg" alt="記事画像">
+            </div>
+        </div>
+        <div class="entry-content">
+            <p>人生初のアクションカメラを購入した。</p>
+            <p></p>
+            <div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <h2 class="t-content">選んだ理由</h2>
+            <h2 class="t-content">開封</h2>
+            <h2 class="t-content">よかった点・悪かった点</h2>
+            <h2 class="t-content">他機種との比較</h2>
+            <h2 class="t-content">まとめ</h2>
+
+        </div>
+
+        <fotter class="fotter">
+            <div class="div">
+                <div class="fotter-size">
+                    <div class="fotter-profile">
+                        <div class="profile-icon">
+                        <img src="images/testicon.png" alt="アイコン">
+                        <div class="profile-content">
+                            <p class="content-h1">エル</p>
+                            <p class="content-article">奈良出身。2024年に11年住んだ渋谷区から神戸に移住した39歳ブロガー兼Youtuber。ブログトップの鹿は奈良愛の象徴。小学校でポケモンとハイパーヨーヨーにハマり、中学校でマジックザギャザリング、高校でPS2、そして大学でスマホに取り憑かれたオタク。今では立派なスマホ依存症。嫌いなものはパリピと邦画。更新情報や日々の雑感をツイッターで呟いています。</p>
+                            <p class="content-sns-icon"></p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="fotter-title">My Blog</p>
+                <p>人生振り返りブログマガジン</p>
+                <p>© 2025 My Blog</p>
+            </div>
+        </fotter>
+<!--JavaScript-->
+    <script src="js/script.js" defer></script>
+    </body>
+</html>
