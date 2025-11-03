@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ブログ</title>
-    <meta name="description" content="お名前を入力してください。">
+    <title>エルログ</title>
+    <meta name="description" content="Erulog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--ファビコン-->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 
     <!--Googleフォント-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
     <!--オリジナルCSS-->
     <link rel="stylesheet" href="css/style.css">
@@ -22,7 +22,7 @@
     <body>
         <header class="header">
             <div class="header-box">
-                My Blog
+                <a href="index.html" class="Erulog">エルログ</a>
                     <!-- ナビゲーションメニュー ↓↓ 追加 ↓↓ -->
             <nav>
                 <button id="menu-open" class="btn-menu">
@@ -39,24 +39,20 @@
                         </svg>
                     </button>
                     <ul class="menu-list">
-                        <li><a href="#">Online Shop</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">YouTube</a></li>
-                        <li><a href="mailto:hello@example.com">Contact</a></li>
+                        <li><a href="Insta360-x4.html">最新記事</a></li>
                     </ul>
                 </div>
             </nav>
             </div>
             <div class="test1">
-                <a href="index.html">
+                <a href="Insta360-x4.html">
                     <img id="slideshow" src="images/maintenance.jpeg" alt="スライドショー">
 
                     <script>
                             // 画像の配列
                         const images = [
                             "images/maintenance.jpeg",
-                            "images/test-birthday.jpg"
+                            "images/gadget-insta360x4.jpg"
                     ];
 
                     let index = 0; // 現在の画像番号
@@ -90,10 +86,35 @@
             </div>  
         </header>
 
+    
         <div class="content">
-            <a href="index.html">
-                <img src="images/maintenance.jpeg">
-            </a>
+            <h1 class="headline">自転車の最新記事</h1>
+            <main class="post-card">
+                <div class="item">
+                    <a href="Insta360-x4.html">
+                        <img src="images/gadget-insta360x4.jpg" alt="">
+                        <p>360°カメラデビュー</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="Insta360-x4.html">
+                        <img src="images/gadget-insta360x4.jpg" alt="">
+                        <p>360°カメラデビュー</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="Insta360-x4.html">
+                        <img src="images/gadget-insta360x4.jpg" alt="">
+                        <p>360°カメラデビュー</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="Insta360-x4.html">
+                        <img src="images/gadget-insta360x4.jpg" alt="">
+                        <p>360°カメラデビュー</p>
+                    </a>
+                </div>
+            </main>
         </div>
 
         <fotter class="fotter">
@@ -101,19 +122,21 @@
                 <div class="fotter-size">
                     <div class="fotter-profile">
                         <div class="profile-icon">
-                        <img src="images/testicon.png" alt="アイコン">
+                        <a href="index.html">
+                            <img src="images/icon.png" alt="アイコン">
+                        </a>
                         <div class="profile-content">
                             <p class="content-h1">エル</p>
-                            <p class="content-article">奈良出身。2024年に11年住んだ渋谷区から神戸に移住した39歳ブロガー兼Youtuber。ブログトップの鹿は奈良愛の象徴。小学校でポケモンとハイパーヨーヨーにハマり、中学校でマジックザギャザリング、高校でPS2、そして大学でスマホに取り憑かれたオタク。今では立派なスマホ依存症。嫌いなものはパリピと邦画。更新情報や日々の雑感をツイッターで呟いています。</p>
+                            <p class="content-article">千葉県出身。2025年11月に言語化能力向上&技術力向上目的で独学にて、ブログを構築。勉強途中なので構造が頻繁に変わる可能性🐜...日常の体験や購入した物などを気軽に紹介していきます。</p>
                             <p class="content-sns-icon"></p>
                         </div>
                         </div>
                     </div>
                 </div>
 
-                <p class="fotter-title">My Blog</p>
-                <p>人生振り返りブログマガジン</p>
-                <p>© 2025 My Blog</p>
+                <p class="fotter-title">エルログ</p>
+                <p>日常報告ブログマガジン</p>
+                <p>© 2025 エルログ</p>
             </div>
         </fotter>
 <!--JavaScript-->
