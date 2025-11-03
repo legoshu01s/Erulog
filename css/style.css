@@ -76,8 +76,6 @@ SLIDE MENU
     width: max(32vw, 20rem);
     height: 100vh;
     background-color: #333333;
-    box-shadow: 0 0 2rem var(--brown);
-    font-family: var(--oswald-font);
     translate: 100vw;
 }
 .menu-list {
@@ -89,9 +87,13 @@ SLIDE MENU
     background-color: #777777;
 }
 .menu-list a {
-    color: var(--light-green);
     text-decoration: none;
     font-size: 2rem;
+    color: black;
+    display: block;
+    margin: 2px;
+    padding: 8px;
+    transition: .5s;
 }
 
 /*ヘッダー画像*/
@@ -104,7 +106,7 @@ SLIDE MENU
 
 /*メニュー*/
 .menu-box {
-    background-color: #333333;
+    background-color: ;
 }
 .grid {
     display: grid;
@@ -146,9 +148,11 @@ SLIDE MENU
 }
 .mokuzi {
     display: block;
-    padding: .5rem;
     color: black;
     background-color: #777777;
+    margin: 2px;
+    padding: 8px;
+    transition: .5s;
 }
 .mokuzi p {
     text-align: left;   
