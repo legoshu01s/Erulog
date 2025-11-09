@@ -22,6 +22,11 @@ h1 {
     text-align: center;
 }
 
+
+.caption {
+    font-size: smaller;
+}
+
 /*ヘッダー*/
 .header {
     font-size: 3rem;
@@ -175,7 +180,7 @@ SLIDE MENU
 .mokuzi {
     display: block;
     color: black;
-    background-color: #777777;
+    background-color: #d5d2d2;
     margin: 2px;
     padding: 8px;
     transition: .5s;
