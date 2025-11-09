@@ -189,16 +189,19 @@ SLIDE MENU
 }
 
 .group {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .group p {
     text-align: left;
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
 .caption {
+    text-align: center;
     font-size: smaller;
+}
+.caption p {
+    margin-top: -.4rem;
 }
 
 /*フッター*/
