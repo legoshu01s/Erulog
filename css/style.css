@@ -23,9 +23,7 @@ h1 {
 }
 
 
-.caption {
-    font-size: smaller;
-}
+
 
 /*ヘッダー*/
 .header {
@@ -112,9 +110,6 @@ SLIDE MENU
 
 
 /*メニュー*/
-.menu-box {
-    background-color: ;
-}
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -191,6 +186,19 @@ SLIDE MENU
 
 .t-content {
     text-align: center;
+}
+
+.group {
+    margin-top: 1rem;
+}
+.group p {
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.caption {
+    font-size: smaller;
 }
 
 /*フッター*/
