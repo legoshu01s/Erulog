@@ -134,6 +134,10 @@ SLIDE MENU
 .content {
     margin-top: 0.5rem;
 }
+.content-display {
+    display: flex;
+}
+
 .center {
     text-align: center;
 }
@@ -172,6 +176,10 @@ SLIDE MENU
     margin-right: .5rem;
     margin-left: .5rem;
 }
+.main-content {
+    margin-bottom: 3rem;
+}
+
 .mokuzi {
     display: block;
     color: black;
@@ -187,6 +195,9 @@ SLIDE MENU
 .t-content {
     text-align: center;
 }
+h3 {
+    margin-left: 1rem;
+}
 
 .group {
     margin-top: 2rem;
@@ -196,6 +207,7 @@ SLIDE MENU
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
 .caption {
     text-align: center;
     font-size: smaller;
