@@ -194,9 +194,11 @@ SLIDE MENU
 
 .t-content {
     text-align: center;
+    margin-top: 1rem;
 }
 h3 {
     margin-left: 1rem;
+    margin-top: .5rem;
 }
 
 .group {
