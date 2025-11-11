@@ -110,10 +110,6 @@ h1 {
 .unit-base {
     padding-bottom: .5rem;
 }
-.weight {
-    margin-right: .5rem;
-    margin-left: .5rem;
-}
 .main-content {
     margin-bottom: 3rem;
 }
@@ -128,6 +124,9 @@ h1 {
 }
 .mokuzi p {
     text-align: left;   
+}
+li {
+    list-style-type: none;
 }
 
 .t-content {
