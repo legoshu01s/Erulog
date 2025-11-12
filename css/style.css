@@ -67,6 +67,7 @@ h1, h2, h3 {
 
 /*メイン記事*/
 .content {
+    background-color: #fff;
     margin-top: 0.5rem;
     text-align: center;
 }
@@ -190,6 +191,9 @@ h3 {
     text-align: center;
     }
     /*メイン*/
+    .test {
+    background-color: #f3eeee;
+    }
     .content {
     margin-right: 20%;
     margin-left: 20%;
