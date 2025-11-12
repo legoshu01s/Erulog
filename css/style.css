@@ -117,20 +117,16 @@ h3 {
     padding-bottom: .5rem;
 }
 .mokuzi,
-li {
-    display: block;
+.mokuzi-box a {
+    display: grid;
     color: black;
     background-color: #d5d2d2;
     margin: 2px;
     padding: 8px;
     transition: .5s;
 }
-li {
-    list-style-type: none;
+.mokuzi-box a {
     text-align: left;   
-}
-li a {
-    color: black;
 }
 /**目次終了**/
 
