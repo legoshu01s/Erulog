@@ -40,7 +40,7 @@ h1 {
 }
 
 /*ヘッダー画像*/
-.test1 {
+.flexible-images {
     margin-top: .5rem;
     text-align: center;
 }
@@ -138,15 +138,14 @@ h3 {
     margin-top: .5rem;
 }
 
-.group {
+.article-group {
     margin-top: 2rem;
 }
-.group p {
+.article-group p {
     text-align: left;
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
 .caption {
     text-align: center;
     font-size: smaller;
