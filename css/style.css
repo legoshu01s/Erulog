@@ -14,14 +14,13 @@ img {
     transition: opacity 0.5s ease;
 }
 
-a,
-p,
-h1,
-h2,
-h3 {
+a {
     text-decoration: none;
+}
+h1, h2, h3 {
     text-align: center;
 }
+
 
 /*ヘッダー*/
 .header {
@@ -60,8 +59,10 @@ h3 {
     transition: .5s;
 }
 .menu:hover {
-    scale: 1;
+    scale: 1.05;
+    background-color: #c0bebe;
 }
+
 
 
 /*メイン記事*/
@@ -123,10 +124,10 @@ h3 {
     background-color: #d5d2d2;
     margin: 2px;
     padding: 8px;
-    transition: .5s;
 }
 .mokuzi-box a {
     text-align: left;   
+    transition: .5s;
 }
 /**目次終了**/
 
