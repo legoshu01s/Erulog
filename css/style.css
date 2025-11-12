@@ -69,6 +69,10 @@ h3 {
     margin-top: 0.5rem;
     text-align: center;
 }
+.content-group {
+    text-align: center;
+    margin-top: 1rem;
+}
 .article-group {
     margin-top: 2rem;
 }
@@ -108,12 +112,12 @@ h3 {
 .main-content {
     margin-bottom: 3rem;
 }
+/**目次**/
 .unit-base {
     padding-bottom: .5rem;
 }
-
-
-.mokuzi {
+.mokuzi,
+li {
     display: block;
     color: black;
     background-color: #d5d2d2;
@@ -121,21 +125,21 @@ h3 {
     padding: 8px;
     transition: .5s;
 }
-.mokuzi p {
-    text-align: left;   
-}
 li {
     list-style-type: none;
+    text-align: left;   
 }
+li a {
+    color: black;
+}
+/**目次終了**/
 
-.t-content {
-    text-align: center;
-    margin-top: 1rem;
-}
+
 h3 {
     margin-left: 1rem;
     margin-top: .5rem;
 }
+/**コンテンツ画像**/
 .caption {
     text-align: center;
     font-size: smaller;
@@ -143,6 +147,8 @@ h3 {
 .caption p {
     margin-top: -.4rem;
 }
+/**コンテンツ画像終了**/
+
 
 /*フッター*/
     .footer-size {
