@@ -27,6 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  // サイドバーを読み込み
+  fetch("sidebar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.body.insertAdjacentHTML("beforeend", html);
+      }
+    );
+
+
   // フッターを読み込み
   fetch("footer.html")
     .then(res => res.text())
