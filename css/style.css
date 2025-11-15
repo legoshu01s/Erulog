@@ -205,6 +205,9 @@ h3 {
     width: 70%;
     text-align: center;
     }
+    .main-content {
+    padding: 2rem;
+    }
     .post-card {
     display: grid;
     gap: .5rem;
