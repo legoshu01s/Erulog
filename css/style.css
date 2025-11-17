@@ -131,7 +131,11 @@ h1, h2, h3 {
 }
 .large {
     font-size: larger;
-
+}
+.black-friday {
+    color: #fff;
+    background-color: orange;
+    border-radius: 6px;
 }
 .btn {
     color: #fff;
