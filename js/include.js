@@ -38,6 +38,7 @@ if (imgElement && linkElement) {
     }, 500);
   }, 10000);
 }
+    });
     
   // フッターを読み込み
   fetch("footer.html")
