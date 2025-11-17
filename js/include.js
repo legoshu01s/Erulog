@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // ヘッダー内スライドショーのスクリプト
       const images = [
         "images/maintenance.jpeg",
-        "images/gadget-insta360x4.jpg"
+        "images/gadget-insta360x4.jpg",
+        "images/html-css-javascript1.jpg"
       ];
 
       let index = 0;
