@@ -104,6 +104,7 @@ h1, h2, h3 {
     margin-bottom: .5rem;
 }
 .item {
+    display: grid;
     background-color: #d5d2d2;
 }
 .item p {
@@ -111,6 +112,21 @@ h1, h2, h3 {
     padding: .5rem;
     font-weight: lighter;
 }
+.card-text {
+    padding: .5rem;
+}
+.card-images {
+    width: 100%;
+    height: 100px;      /* ← 好きな高さに固定 */
+    overflow: hidden;
+}
+.card-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ← 同じ枠にきれいに収まる */
+    display: block;
+}
+
 .main-content {
     margin-bottom: 3rem;
 }
@@ -240,13 +256,24 @@ h3 {
     }
     .post-card {
     display: grid;
-    gap: .5rem;
+    gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     max-width: 1120px;
-    margin: auto;
+    margin: 3rem;
     padding: .5rem;
     margin-bottom: .5rem;
+    }
+    .card-images {
+    width: 100%;
+    height: 250px;      /* ← 好きな高さに固定 */
+    overflow: hidden;
+    }
+    .card-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ← 同じ枠にきれいに収まる */
+    display: block;
     }
     .article-display2 {
     display: flex;
