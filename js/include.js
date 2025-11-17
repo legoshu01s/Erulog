@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const images = [
         "images/maintenance.jpeg",
         "images/gadget-insta360x4.jpg",
-        "images/html-css-javascript1.jpg"
+        "images/html-css-javascript1.png"
       ];
 
       let index = 0;
