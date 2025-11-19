@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>HTMLエスケープツール</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  textarea { width: 100%; height: 120px; margin-bottom: 10px; }
+  pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+</style>
+</head>
+<body>
+
+<h2>HTMLを特殊文字に変換</h2>
+
+<textarea id="inputHTML" placeholder="ここにHTMLを貼り付け"></textarea>
+<button onclick="escapeHTML()">変換</button>
+
+<h3>変換結果:</h3>
+<pre id="outputHTML"></pre>
+
+<script>
+function escapeHTML() {
+  const input = document.getElementById("inputHTML").value;
+  const escaped = input
+    .replace(/&/g, "&amp;")   // & を先に変換
+    .replace(/</g, "&lt;")    // < を変換
+    .replace(/>/g, "&gt;");   // > を変換
+  document.getElementById("outputHTML").textContent = escaped;
+}
+</script>
+
+</body>
+</html>
