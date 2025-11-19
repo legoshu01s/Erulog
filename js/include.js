@@ -4,6 +4,31 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML("afterbegin", html);
+      
+// HTML エスケープ関数
+function escapeHtml(str) {
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+// ページ読み込み時に rawCode の内容を反映
+document.addEventListener("DOMContentLoaded", () => {
+    const raw = document.getElementById("rawCode").textContent;
+    document.getElementById("escapedOutput").innerText = escapeHtml(raw.trim());
+});
+
+// コピー機能
+function copyCode(button) {
+    const code = button.nextElementSibling.innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "コピーしました！";
+        setTimeout(() => (button.innerText = "コピー"), 1500);
+    });
+}
 
 // スライド画像
 const images = [
