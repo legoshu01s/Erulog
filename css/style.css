@@ -88,6 +88,46 @@ h1, h2, h3 {
     justify-content: center;
 }
 
+code {
+    text-align: left;
+}
+.code-block {
+    position: relative;
+    background: #1e1e1e;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "Menlo", "Consolas", monospace;
+    overflow-x: auto;       /* 横に長いコードはスクロール */
+}
+.code-block pre {
+    margin: 0;              /* 余計な上下マージンを削除 */
+    padding: 0;             /* 内側余白は親の .code-block で制御 */
+    white-space: pre;       /* 改行・空白をそのまま表示 */
+    display: block;
+}
+.code-block code {
+    display: block;
+}
+.copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+.copy-button:active {
+    background: #666;
+}
+
+
 .mainbox img {
     display: block;
     margin-left: auto;
@@ -137,9 +177,6 @@ h1, h2, h3 {
     justify-content: center;
 }
 
-pre {
-    text-align: left;
-}
 
 
 .amazon-window {
