@@ -6,10 +6,46 @@
 <style>
   body { font-family: sans-serif; padding: 20px; }
   textarea { width: 100%; height: 120px; margin-bottom: 10px; }
-  pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+  .code-block {
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 10px;
+  }
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .copy-button:active {
+    background: #666;
+  }
 </style>
 </head>
 <body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2009924816171751"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2009924816171751"
+     data-ad-slot="5565818334"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <h2>HTMLを特殊文字に変換</h2>
 
@@ -17,17 +53,40 @@
 <button onclick="escapeHTML()">変換</button>
 
 <h3>変換結果:</h3>
-<pre id="outputHTML"></pre>
+<div class="code-block">
+  <button class="copy-button" onclick="copyCode(this)">コピー</button>
+  <pre id="outputHTML"></pre>
+</div>
 
 <script>
 function escapeHTML() {
   const input = document.getElementById("inputHTML").value;
   const escaped = input
-    .replace(/&/g, "&amp;")   // & を先に変換
-    .replace(/</g, "&lt;")    // < を変換
-    .replace(/>/g, "&gt;");   // > を変換
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
   document.getElementById("outputHTML").textContent = escaped;
 }
+
+function copyCode(button) {
+  const code = button.nextElementSibling.innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    button.innerText = "コピーしました！";
+    setTimeout(() => (button.innerText = "コピー"), 1500);
+  });
+}
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2009924816171751"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2009924816171751"
+     data-ad-slot="5565818334"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 </body>
