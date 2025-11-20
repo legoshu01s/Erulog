@@ -9,14 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
 const images = [
   "images/maintenance.jpeg",
   "images/gadget-insta360x4.jpg",
-  "images/html-css-javascript1.png"
+  "images/html-css-javascript1.png",
+  "images/test1s.png"
 ];
 
 // 各スライドのリンク先
 const links = [
   "index.html",
   "insta360-x4.html",
-  "html-css-javascript.html"
+  "html-css-javascript.html",
+  "desk-introduce.html"
 ];
 
 let index = 0;
