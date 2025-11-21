@@ -248,7 +248,7 @@ h3 {
 
 
 /*フッター*/
-    .footer-size {
+.footer-size {
     padding-top: 2%;
     padding-right: 20%;
     padding-left: 20%;
@@ -285,7 +285,8 @@ h3 {
 @media (min-width: 800px) {
     /*ヘッダー*/
     header {
-    margin: 20%;
+    margin-right: 20%;
+    margin-left: 20%;
     }
     .grid {
     display: grid;
