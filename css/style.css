@@ -41,6 +41,7 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     text-align: center;
+
 }
 
 
@@ -288,16 +289,15 @@ h3 {
     grid-template-columns: repeat(6, 1fr);
     text-align: center;
     }
-    .flexible-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-    }
     /*メイン*/
     .background {
     background-color: #f3eeee;
     display: flex;
     justify-content: space-between;
+    }
+    .flexible-images {
+    margin-right: 10%;
+    margin-left: 10%;
     }
     /**コンテンツ**/
     .content {
