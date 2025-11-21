@@ -44,12 +44,14 @@ if (imgElement && linkElement) {
     });
 
   // ポストカード読み込み
+  console.log("post-card fetch start");
   fetch("/common/post-card.html")
-  .then(res => res.text())
-  .then(html => {
-    const processedHtml = html.replaceAll('href="../', 'href="').replaceAll('src="../', 'src="');
-    document.querySelector("#postcard")?.insertAdjacentHTML("beforeend", processedHtml);
-  });
+    .then(res => res.text())
+    .then(html => {
+      console.log("post-card loaded!");
+      document.querySelector("#postcard")?.insertAdjacentHTML("beforeend", html);
+    });
+
     
   // フッターを読み込み
   fetch("/common/footer.html")
