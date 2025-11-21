@@ -284,11 +284,21 @@ h3 {
 /*デスクトップ版*/
 @media (min-width: 800px) {
     /*ヘッダー*/
+    .flexible-images {
+    margin-right: 8%;
+    margin-left: 8%;
+    }
+    .menu-box {
+    background-color: #777777;
+    }
     .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     text-align: center;
+    margin-right: 8%;
+    margin-left: 8%;
     }
+    
     /*メイン*/
     .background {
     background-color: #f3eeee;
