@@ -17,9 +17,9 @@ const images = [
 // 各スライドのリンク先
 const links = [
   "index.html",
-  "insta360-x4.html",
-  "html-css-javascript.html",
-  "desk-introduce.html"
+  "article/insta360-x4.html",
+  "article/html-css-javascript.html",
+  "article/desk-introduce.html"
 ];
 
 let index = 0;
