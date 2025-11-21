@@ -284,6 +284,9 @@ h3 {
 /*デスクトップ版*/
 @media (min-width: 800px) {
     /*ヘッダー*/
+    header {
+    background-color: #f3eeee;
+    }
     .flexible-images {
     margin-right: 8%;
     margin-left: 8%;
