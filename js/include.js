@@ -1,76 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ヘッダーを読み込み
+  // --- ヘッダー読み込み ---
   fetch("/common/header.html")
     .then(res => res.text())
     .then(html => {
       const processedHtml = html.replaceAll('href="../', 'href="').replaceAll('src="../', 'src="');
       document.body.insertAdjacentHTML("afterbegin", processedHtml);
-      
-document.addEventListener("DOMContentLoaded", () => {
-  // スライド用要素
-  const imgElement = document.getElementById("slideshow");
-  const linkElement = document.getElementById("slideLink");
-  const titleElement = document.getElementById("slideTitle");
 
-  if (!imgElement || !linkElement) return;
+      // --- スライド用要素 ---
+      const imgElement = document.getElementById("slideshow");
+      const linkElement = document.getElementById("slideLink");
+      const titleElement = document.getElementById("slideTitle");
 
-  // post-card.html からカードを読み込む
-  fetch("/common/post-card.html")
-    .then(res => res.text())
-    .then(html => {
-      const container = document.createElement("div");
-      container.innerHTML = html;
+      if (!imgElement || !linkElement) return;
 
-      // .item ごとに配列化
-      const items = Array.from(container.querySelectorAll(".item")).map(item => {
-        const a = item.querySelector("a");
-        const img = item.querySelector("img");
-        const title = item.querySelector("p");
-        return {
-          href: a.getAttribute("href"),
-          img: img.getAttribute("src"),
-          title: title ? title.textContent : ""
-        };
-      });
+      // --- post-card.html からカード情報取得 ---
+      fetch("/common/post-card.html")
+        .then(res => res.text())
+        .then(html => {
+          const container = document.createElement("div");
+          container.innerHTML = html;
 
-      // 初期表示
-      let index = 0;
-      imgElement.src = items[0].img;
-      linkElement.href = items[0].href;
-      titleElement.textContent = items[0].title;
+          const items = Array.from(container.querySelectorAll(".item")).map(item => {
+            const a = item.querySelector("a");
+            const img = item.querySelector("img");
+            const title = item.querySelector("p");
+            return {
+              href: a.getAttribute("href"),
+              img: img.getAttribute("src"),
+              title: title ? title.textContent : ""
+            };
+          });
 
-      // スライド切り替え
-      setInterval(() => {
-        index = (index + 1) % items.length;
+          // --- 初期表示 ---
+          let index = 0;
+          imgElement.src = items[0].img;
+          linkElement.href = items[0].href;
+          titleElement.textContent = items[0].title;
 
-        // フェードアウト
-        imgElement.style.opacity = 0;
+          // --- スライド切り替え ---
+          setInterval(() => {
+            index = (index + 1) % items.length;
 
-        setTimeout(() => {
-          imgElement.src = items[index].img;
-          linkElement.href = items[index].href;
-          titleElement.textContent = items[index].title;
-          // フェードイン
-          imgElement.style.opacity = 1;
-        }, 500);
-      }, 5000); // 5秒ごとに切替
+            imgElement.style.opacity = 0;
+
+            setTimeout(() => {
+              imgElement.src = items[index].img;
+              linkElement.href = items[index].href;
+              titleElement.textContent = items[index].title;
+              imgElement.style.opacity = 1;
+            }, 500);
+          }, 5000); // 5秒ごとに切替
+        });
     });
-});
 
-
-
-
-  // ポストカード読み込み
-  console.log("post-card fetch start");
+  // --- ポストカード本体の読み込み ---
   fetch("/common/post-card.html")
     .then(res => res.text())
     .then(html => {
-      console.log("post-card loaded!");
       document.querySelector("#postcard")?.insertAdjacentHTML("beforeend", html);
     });
 
-    
-  // フッターを読み込み
+  // --- フッター読み込み ---
   fetch("/common/footer.html")
     .then(res => res.text())
     .then(html => {
