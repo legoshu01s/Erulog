@@ -39,9 +39,11 @@ h1, h2, h3 {
 /*ヘッダー画像*/
 .flexible-images {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     text-align: center;
 }
+
+
 
 /*メニュー*/
 .grid {
@@ -49,6 +51,7 @@ h1, h2, h3 {
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
 }
+
 .menu {
     display: inline-block;
     font-size: .9rem;
@@ -280,6 +283,11 @@ h3 {
     .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    }
+    .flexible-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     text-align: center;
     }
     /*メイン*/
