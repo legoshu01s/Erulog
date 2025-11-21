@@ -6,42 +6,65 @@ document.addEventListener("DOMContentLoaded", () => {
       const processedHtml = html.replaceAll('href="../', 'href="').replaceAll('src="../', 'src="');
       document.body.insertAdjacentHTML("afterbegin", processedHtml);
       
-// スライド画像
-const images = [
-  "images/maintenance.jpeg",
-  "images/gadget-insta360x4.jpg",
-  "images/html-css-javascript1.png",
-  "images/test1s.png"
-];
+fetch("/common/post-card.html")
+  .then(res => res.text())
+  .then(html => {
+    // 仮のコンテナに入れて DOM として扱う
+    const container = document.createElement("div");
+    container.innerHTML = html;
 
-// 各スライドのリンク先
-const links = [
-  "index.html",
-  "article/insta360-x4.html",
-  "article/html-css-javascript.html",
-  "article/desk-introduce.html"
-];
+fetch("/common/post-card.html")
+  .then(res => res.text())
+  .then(html => {
+    // 仮のコンテナに入れて DOM として扱う
+    const container = document.createElement("div");
+    container.innerHTML = html;
 
-let index = 0;
-
-const imgElement = document.getElementById("slideshow");
-const linkElement = document.getElementById("slideLink");
-
-if (imgElement && linkElement) {
-  setInterval(() => {
-    index = (index + 1) % images.length;
-
-    // フェードアウト
-    imgElement.style.opacity = 0;
-
-    setTimeout(() => {
-      imgElement.src = images[index];   // 画像変更
-      linkElement.href = links[index];  // リンク変更
-      imgElement.style.opacity = 1;     // フェードイン
-    }, 500);
-  }, 10000);
-}
+    // .item ごとに情報を取得
+    const items = Array.from(container.querySelectorAll(".item")).map(item => {
+      const a = item.querySelector("a");
+      const img = item.querySelector("img");
+      const title = item.querySelector("p");
+      return {
+        href: a.getAttribute("href"),
+        img: img.getAttribute("src"),
+        title: title ? title.textContent : ""
+      };
     });
+
+    return items;
+  })
+  .then(items => {
+    // スライドショーに反映
+    const imgElement = document.getElementById("slideshow");
+    const linkElement = document.getElementById("slideLink");
+    const titleElement = document.getElementById("slideTitle"); // タイトル用
+
+    if (!imgElement || !linkElement) return;
+
+    let index = 0;
+
+    // 初期表示
+    imgElement.src = items[0].img;
+    linkElement.href = items[0].href;
+    if (titleElement) titleElement.textContent = items[0].title;
+
+    // ループで切り替え
+    setInterval(() => {
+      index = (index + 1) % items.length;
+
+      imgElement.style.opacity = 0;
+
+      setTimeout(() => {
+        imgElement.src = items[index].img;
+        linkElement.href = items[index].href;
+        if (titleElement) titleElement.textContent = items[index].title;
+        imgElement.style.opacity = 1;
+      }, 500);
+    }, 5000); // 5秒ごとに切替
+  });
+
+
 
   // ポストカード読み込み
   console.log("post-card fetch start");
