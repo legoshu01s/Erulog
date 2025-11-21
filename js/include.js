@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ヘッダーを読み込み
-  fetch("header.html")
+  fetch("/common/header.html")
     .then(res => res.text())
     .then(html => {
-      document.body.insertAdjacentHTML("afterbegin", html);
+      const processedHtml = html.replaceAll('href="../', 'href="').replaceAll('src="../', 'src="');
+      document.body.insertAdjacentHTML("afterbegin", processedHtml);
       
 // スライド画像
 const images = [
@@ -41,11 +42,20 @@ if (imgElement && linkElement) {
   }, 10000);
 }
     });
+
+  // ポストカード読み込み
+  fetch("/common/post-card.html")
+  .then(res => res.text())
+  .then(html => {
+    const processedHtml = html.replaceAll('href="../', 'href="').replaceAll('src="../', 'src="');
+    document.querySelector("#postcard")?.insertAdjacentHTML("beforeend", processedHtml);
+  });
     
   // フッターを読み込み
-  fetch("footer.html")
+  fetch("/common/footer.html")
     .then(res => res.text())
     .then(html => {
-      document.body.insertAdjacentHTML("beforeend", html);
+      const processedHtml = html.replaceAll('href="../', 'href="').replaceAll('src="../', 'src="');
+      document.body.insertAdjacentHTML("beforeend", processedHtml);
     });
 });
