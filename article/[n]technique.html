@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>【改善】今月試した技術まとめ</title>
+    <title>【開発ログ】最近試した技術まとめ</title>
     <meta name="description" content="Erulog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--ファビコン-->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     
     <!---リセットCSS-->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
     <!--オリジナルCSS-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!--Google AdSense-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2009924816171751"
@@ -27,11 +27,11 @@
         <main class="background">
 
             <div class="content">
-                <h1>【改善】試した技術まとめ</h1>
+                <h1>【開発ログ】最近試した技術まとめ</h1>
                 <div class="article-group">
-                    <p>今回から不定期で、ブログ内で試した新しい技術をまとめて振り返る「改善」を始める。</p>
-                    <p>毎記事の裏側でどんな技術を触ったのか、実際に使ってみてどうだったのか、そして次にどう活かしていくのか。</p>
-                    <p>この3点を中心に、技術トライをざっくりまとめていく。</p>
+                    <p>ここ最近、ブログの制作環境を一気に改善するために、UIコンポーネント化・HTML共通化・コード整形ツールの強化を進めてきた。</p>
+                    <p>この記事では、実際に試した技術と採用したコードをまとめた。</p>
+                    <p>「記事を書く効率を上げたい」「デザインを統一したい」という人にも参考になればうれしい。</p>
                 </div>
                 <ins class="adsbygoogle"
                     style="display:block; text-align:center;"
@@ -51,23 +51,27 @@
                             <p>目次</p>
                         </div>
                         <div class="mokuzi-box">
-                            <a href="#lego1">・試した技術</a>
-                            <a href="#lego2">・成果、良かった気づき</a>
-                            <a href="#lego3">・次試したい技術</a>
-                            <a href="#lego4">・まとめ</a>
+                            <a href="#lego1">・コードブロックの改善</a>
+                            <a href="#lego2">・Amazon商品ブロックの部品化</a>
+                            <a href="#lego3">・目次ブロック（画像）</a>
+                            <a href="#lego4">・キャプション・記事カードの部品化</a>
+                            <a href="#lego5">・成果と気づき</a>
+                            <a href="#lego6">・まとめ</a>
                         </div>
                     </div>
                     <div class="content-group">
                     <h2 id="lego1">試した技術たち</h2>
-
-                            <h3>コードブロック</h3>
-                            <div class="caption">
-                                <img src="images/test.png" alt="画像">                            
-                            </div>
-                            <div class="code-block">
-                                <button class="copy-button" onclick="copyCode(this)">コピー</button>
-                                HTML
-                                <pre><code>
+                        <h3>コードブロック</h3>
+                        <div class="caption">
+                            <img src="/images/test.png" alt="記事">
+                        </div>
+                        <div class="article-group">
+                            <p>まず取り組んだのがコピー機能付きのコードブロック。</p>
+                            <p>コードをワンクリックでコピーでき、UXが大きく向上した。</p>
+                        <div class="code-block">
+                            <button class="copy-button" onclick="copyCode(this)">コピー</button>
+                            HTML
+                            <pre><code>
 &lt;div class="code-block"&gt;
 &lt;button class="copy-button" onclick="copyCode(this)"&gt;コピー&lt;/button&gt;
     HTML
@@ -75,12 +79,17 @@
 &lt;!--ここにコード記述--&gt;
     &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-                                </code></pre>
-                            </div>
-                            <h3>amazonブロック</h3>
-                            <div class="caption">
-                                <img src="images/test.png" alt="画像">                            
-                            </div>
+                            </code></pre>
+                        </div>
+                    
+                    <h2 id="lego2">Amazon商品ブロックの部品化</h2>
+                        <h3>Amazonウィンドウ</h3>
+                        <div class="caption">
+                            <img src="/images/test.png" alt="記事">
+                        </div>
+                        <div class="article-group">
+                            <p>Amazonリンクのデザインを統一するため、ウィンドウ化したカードを作成。</p>
+                            <p>商品名、セール情報、価格などを入れるだけで完成するようにした。</p>
                         <div class="code-block">
                             <button class="copy-button" onclick="copyCode(this)">コピー</button>
                             HTML
@@ -104,10 +113,14 @@
                             </code></pre>
                         </div>
 
-                            <h3>目次ブロック</h3>
-                            <div class="caption">
-                                <img src="images/test.png" alt="画像">                            
-                            </div>
+                    <h2 id="lego3">目次ブロックの共通化</h2>
+                        <h3>目次ブロック</h3>
+                        <div class="caption">
+                            <img src="/images/test.png" alt="記事">
+                        </div>
+                        <div class="article-group">
+                            <p>記事の上部に表示する カスタム目次ブロック を作成。</p>
+                            <p>シンプルな構造でどの記事にも貼れるようにした。</p>
                         <div class="code-block">
                             <button class="copy-button" onclick="copyCode(this)">コピー</button>
                             HTML
@@ -126,10 +139,13 @@
                             </code></pre>
                         </div>
 
-                        <h3>キャプション・記事・コンテンツブロック</h3>
-                            <div class="caption">
-                                <img src="images/test.png" alt="画像">                            
-                            </div>
+                    <h2 id="lego4">キャプション・記事カードの部品化</h2>
+                        <h3>キャプションブロック</h3>
+                        <div class="caption">
+                            <img src="/images/test.png" alt="記事">
+                        </div>
+                        <div class="article-group">
+                            <p>h2の下に画像 → 本文という流れが多いため、セットで使えるキャプションブロック をテンプレ化。</p>
                         <div class="code-block">
                             <button class="copy-button" onclick="copyCode(this)">コピー</button>
                             HTML
@@ -157,75 +173,41 @@
                         }
                         </script>
 
-                    
+                    <h2 id="lego5">成果と気づき</h2>
+                        <h3>■ 記事を書くのが異常に楽になった</h3>
+                        <div class="article-group">
+                            <p>今回部品化したことで、特に感じたのはこの3点。</p>
+                        </div>
+                        <div class="article-group">
+                            <p>・Amazonブロック</p>
+                            <p>・キャプションブロック</p>
+                            <p>・目次ブロック</p>
+                        </div>
+                        <div class="article-group">
+                            <p>これらは全部 コピペして中身を入れ替えるだけ。</p>
+                        </div>
 
+                        <h3>■ 無駄なコードが大量に消え、メンテナンス性が爆上がり</h3>
+                        <div class="article-group">
+                            <p>1箇所変更すると他全部に反映される設計にできてきた。</p>
+                        </div>
 
-                    <div class="content-group">
-                    <h2 id="lego2">成果、良かった気づき</h2>
-                        <div class="caption">
-                            <img src="images/test.png" alt="画像">                            
-                        </div>
+                        <h3>■ それでもまだ完璧じゃない</h3>
                         <div class="article-group">
-                            <p>ブロック化したことによって記事を書くのが非常に楽になった。</p>
-                            <p>そして、無駄なコードがなくなり、メンテナンス性が向上した。</p>
+                            <p>共通化できていない部分もあるし、JavaScriptももっとモジュール化できる余地がある。</p>
+                            <p>でも、楽しみながら少しずつ改善していくつもり。</p>
                         </div>
-                        <div class="article-group">
-                            <p>しかし、まだ最適化しきれてないのも事実。</p>
-                            <p>楽しみながら改善、継続していこうと思う。</p>
-                        </div>
-                        <div class="article-group">
-                            <p>そして、この記事最大の功労者が、メイン記事右側に作成した、整形ツール。</p>
-                        </div>
-                        <div class="caption">
-                            <a href="tool1.html"><img src="images/test.png"></a>
-                        </div>
-                        <div class="article-group">
-                            <p>コードそのままHTMLに張ると、ブラウザが認識してしまい、特殊文字に置き換える必要がある。</p>
-                            <p>そのためわざわざ整形して、コードブロックに表示している。</p>
-                        </div>
-                    </div>
 
-                    <div class="content-group">
-                    <h2 id="lego3">次試したい技術</h2>
-                        <div class="caption">
-                            <img src="images/test.png" alt="画像">                            
+                    <h2 id="lego6">成果と気づき</h2>
+                        <div class="article-group">
+                            <p>今回いろいろな技術を触ってみて、できたこと・できなかったことがハッキリした。</p>
                         </div>
                         <div class="article-group">
-                            <p>普段は、ネットサーフィンしながら、欲しい構造を適宜パクっているのだが、</p>
-                            <p>このトヨタのホームページは宝の宝庫だ</p>
-                        </div>
-                        <div class="caption">
-                            <a href="https://www.toyota-mobi-tokyo.co.jp/column/20160401_topic_05">https://www.toyota-mobi-tokyo.co.jp/column/20160401_topic_05</a>
-                        </div>      
-                        <div class="caption">
-                            <img src="images/test.png" alt="画像">                            
+                            <p>やっぱり 試してみるのが一番早い。そして触ってみると、自然と「次はこうしたい」が出てくる。</p>
                         </div>
                         <div class="article-group">
-                            <p>この滑らかに動くfooterに、</p>                        
+                            <p>これからもブログ制作の裏側をゆるく共有していく。</p>
                         </div>
-                        <div class="caption">
-                            <img src="images/test.png" alt="画像">                            
-                        </div>
-                        <div class="article-group">
-                            <p>折り畳み式の目次。</p>                        
-                        </div>        
-                        <div class="article-group">
-                            <p>今の自分の技術力では相当複雑な構造に見えるけど、</p>      
-                            <p>技術力が上がると考えたらとても楽しみ。</p>                  
-                        </div>               
-                    </div>
-                    
-                    <div class="content-group">
-                    <h2 id="lego5">まとめ</h2>
-                        <div class="article-group">
-                            <p>今回いろいろ技術を触ってみて、できたこと・できなかったことがハッキリしてよかった。</p>  
-                            <p>やっぱり試すのが一番早いし、触ってみると「次はこうしたい」が自然と出てくる。</p>                      
-                        </div>   
-                        <div class="article-group">
-                            <p>次回は今回の続きで、もっと便利にできそうな部分を掘り下げていく予定。</p>  
-                            <p>ブログ制作の裏側をこれからもゆるっと共有していく。</p>                      
-                        </div>   
-                    </div>
                 </div>
             </div>
             <div class="sidebar">
@@ -236,7 +218,7 @@
                 </section>
             </div>
         </main>
-        <script src="js/include.js" defer></script>
-        <script src="js/script.js" defer></script>
+        <script src="/js/include.js" defer></script>
+        <script src="/js/script.js" defer></script>
     </body>
 </html>
