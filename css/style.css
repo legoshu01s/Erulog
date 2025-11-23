@@ -178,6 +178,7 @@ code {
 }
 .card-date {
     text-align: right;
+    background-color: 0;
     font-size: smaller;
 }
 
