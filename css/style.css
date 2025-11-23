@@ -176,6 +176,11 @@ code {
     object-fit: cover;  /* ← 同じ枠にきれいに収まる */
     display: block;
 }
+.card-date {
+    text-align: right;
+    font-size: smaller;
+}
+
 
 .main-content {
     margin-bottom: 3rem;
