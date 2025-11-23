@@ -60,42 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#postcard")?.insertAdjacentHTML("beforeend", html);
     });
 
-  // --- マップ ---
-  const articles = [
-    {
-      title: "渋谷カフェ巡り",
-      url: "/blog/shibuya-cafe",
-      lat: 35.6595,
-      lng: 139.7005
-    },
-    {
-      title: "新宿の最新スポット",
-      url: "/blog/shinjuku-spot",
-      lat: 35.6938,
-      lng: 139.7034
-    }
-  ];
-  function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 12,
-      center: { lat: 35.6895, lng: 139.6917 } // 東京中心
-    });
-
-    // 記事ごとにマーカーを作成
-    articles.forEach(article => {
-      const marker = new google.maps.Marker({
-        position: { lat: article.lat, lng: article.lng },
-        map: map,
-        title: article.title
-      });
-
-      // クリックしたら記事に飛ぶ
-      marker.addListener("click", () => {
-        window.location.href = article.url;
-      });
-    });
-  }
-
   // --- フッター読み込み ---
   fetch("/common/footer.html")
     .then(res => res.text())
