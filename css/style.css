@@ -55,12 +55,12 @@ header {
 
 .menu {
     display: inline-block;
-    font-size: .9rem;
+    font-size: 1rem;
     background-color: #d5d2d2;
     color: black;
     font-weight: lighter;
-    margin: 2px;
-    padding: 8px;
+    margin: 1px;
+    padding: 10px;
     transition: .5s;
 }
 .menu:hover {
