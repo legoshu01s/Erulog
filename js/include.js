@@ -60,6 +60,39 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#postcard")?.insertAdjacentHTML("beforeend", html);
     });
 
+  const posts = [
+      {
+          title: "記事タイトル1",
+          url: "/article1.html",
+          image: "/images/article1.jpg",
+          date: "2025/01/01"
+      },
+      {
+          title: "記事タイトル2",
+          url: "/article2.html",
+          image: "/images/article2.jpg",
+          date: "2025/01/10"
+      }
+  ];
+
+  let index = 0;
+
+  function updateSlideshow() {
+      document.getElementById("slideshow").src = posts[index].image;
+      document.getElementById("slideTitle").textContent = posts[index].title;
+      document.getElementById("slideLink").href = posts[index].url;
+
+      // ★追加：日付を反映
+      document.getElementById("slideDate").textContent = posts[index].date;
+  }
+
+  setInterval(() => {
+      index = (index + 1) % posts.length;
+      updateSlideshow();
+  }, 5000);
+
+  updateSlideshow();
+
   // --- フッター読み込み ---
   fetch("/common/footer.html")
     .then(res => res.text())
