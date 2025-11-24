@@ -229,8 +229,8 @@ code {
     text-align: center;
     border-radius: 6px;
 }
-table {
-    border: 1;
+.comparison-table {
+    border: #1e1e1e;
 }
 
 /**目次**/
