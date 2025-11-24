@@ -234,6 +234,8 @@ code {
 }
 table {
   margin: 0 auto;
+  border: #1e1e1e;
+  padding: 1rem;
 }
 
 /**目次**/
