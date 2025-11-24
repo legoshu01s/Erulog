@@ -233,8 +233,9 @@ code {
     border: #1e1e1e;
 }
 table {
-    text-align: center;
+  margin: 0 auto;
 }
+
 /**目次**/
 .unit-base {
     padding-bottom: .5rem;
