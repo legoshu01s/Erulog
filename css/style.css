@@ -232,11 +232,18 @@ code {
 .comparison-table {
     border: #1e1e1e;
 }
-table {
-  margin: 0 auto;
-  border: #1e1e1e;
-  padding: 1rem;
+
+table,
+th,
+td {
+    border: 1px solid #1e1e1e;
 }
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
 
 /**目次**/
 .unit-base {
