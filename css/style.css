@@ -232,7 +232,9 @@ code {
 .comparison-table {
     border: #1e1e1e;
 }
-
+table {
+    text-align: center;
+}
 /**目次**/
 .unit-base {
     padding-bottom: .5rem;
