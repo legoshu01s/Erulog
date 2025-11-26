@@ -231,7 +231,8 @@ code {
     border-radius: 6px;
 }
 .table-window p {
-    margin: 10%;
+margin: 3%;
+font-size: smaller;
 }
 .comparison-table {
     border: #1e1e1e;
