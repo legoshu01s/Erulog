@@ -236,6 +236,7 @@ code {
 .table-window p {
     background-color: black;
     color: #fff;
+    font-size: smaller;
     border-radius: 6px;
     padding: 10px;
 }
@@ -388,6 +389,13 @@ h3 {
     padding: 10px;
     text-align: center;
     border-radius: 6px;
+    }
+    .table-window p {
+    background-color: black;
+    color: #fff;
+    font-size: small;
+    border-radius: 6px;
+    padding: 10px;
     }
     /**サイドバー**/
     .sidebar {
