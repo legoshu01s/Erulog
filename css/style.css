@@ -222,23 +222,19 @@ code {
     background-color: orange;
     border-radius: 6px;
 }
-.btn {
+.btn,
+.table-window p {
     color: #fff;
     background-color: black;        
     padding: 10px;
     text-align: center;
     border-radius: 6px;
 }
+.table-window p {
+    margin: 2px;
+}
 .comparison-table {
     border: #1e1e1e;
-}
-
-.table-window p {
-    background-color: black;
-    color: #fff;
-    font-size: smaller;
-    border-radius: 6px;
-    padding: 10px;
 }
 
 table,
