@@ -233,6 +233,11 @@ code {
     border: #1e1e1e;
 }
 
+.table-window {
+    background-color: orange;
+    color: black;
+}
+
 table,
 th,
 td {
