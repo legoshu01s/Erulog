@@ -236,6 +236,7 @@ code {
 .table-window p {
     background-color: black;
     color: #fff;
+    border-radius: 6px;
 }
 
 table,
