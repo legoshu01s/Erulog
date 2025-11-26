@@ -234,8 +234,8 @@ code {
 }
 
 .table-window p {
-    background-color: orange;
-    color: black;
+    background-color: black;
+    color: #fff;
 }
 
 table,
