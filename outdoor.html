@@ -5,81 +5,97 @@
     <title>エルログ</title>
     <meta name="description" content="Erulog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--ファビコン-->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    
+
     <!---リセットCSS-->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 
     <!--Googleフォント-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
     <!--オリジナルCSS-->
     <link rel="stylesheet" href="css/style.css">
 </head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2009924816171751"
-        crossorigin="anonymous"></script>
-    <body>
-        <div class="background">
-            <div class="long-sidebar">
-                <section class="test1">
-                    <div class="test2">
-                        <!-- 左縦長 -->
-                        広告スペース
-                    </div>
-                </section>
-            </div>
-            <div class="content">
-                <h1>アウトドア</h1>
-                <div class="google-maps">
-                    test
-                    <div id="map" style="width:100%; height:400px;"></div>
-                        <script async
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDTIwSYHGbwmxEty4gsoCG4_Ku5Dc07A&callback=initMap"></script>
-                        </script>
 
-                </div>
-                <div class="caption">
-                    <img src="/images/test.png">
-                </div>
-            </div>
-            
-            <div class="sidebar">
-                <section class="test1">
-                    <h1>ツール</h1>
-                    <div class="test2">
-                        <div class="item">
-                            <div class="card-images">
-                                <a href="tool/tool1.html">
-                                    <img src="images/test.png" alt="画像">
-                                </a>    
-                            </div>
-                            <div class="card-text">
-                                <a href="tool/tool1.html">
-                                    <p>整形ツール</p>
-                                </a>
-                            </div>
-                        </div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2009924816171751"
+    crossorigin="anonymous"></script>
 
-                        <div class="item">
-                            <div class="card-images">
-                                <a href="tool/tool2.html">
-                                    <img src="images/test.png" alt="画像">
-                                </a>    
-                            </div>
-                            <div class="card-text">
-                                <a href="tool/tool2.html">
-                                    <p>OGP生成ツール</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<body>
+
+<script>
+function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 35.6812, lng: 139.7671 },
+        zoom: 12,
+    });
+}
+</script>
+
+<div class="background">
+    <div class="long-sidebar">
+        <section class="test1">
+            <div class="test2">
+                広告スペース
             </div>
+        </section>
+    </div>
+
+    <div class="content">
+        <h1>アウトドア</h1>
+        <div class="google-maps">
+            <div id="map" style="width:100%; height:400px;"></div>
         </div>
-        <script src="js/include.js" defer></script>
-        <script src="js/script.js" defer></script>
-    </body>
+
+        <div class="caption">
+            <img src="/images/test.png">
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <section class="test1">
+            <h1>ツール</h1>
+            <div class="test2">
+                <div class="item">
+                    <div class="card-images">
+                        <a href="tool/tool1.html">
+                            <img src="images/test.png" alt="画像">
+                        </a>
+                    </div>
+                    <div class="card-text">
+                        <a href="tool/tool1.html">
+                            <p>整形ツール</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card-images">
+                        <a href="tool/tool2.html">
+                            <img src="images/test.png" alt="画像">
+                        </a>
+                    </div>
+                    <div class="card-text">
+                        <a href="tool/tool2.html">
+                            <p>OGP生成ツール</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Google Maps 読み込みは最後が安全 -->
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATDTIwSYHGbwmxEty4gsoCG4_Ku5Dc07A&callback=initMap">
+</script>
+
+<script src="js/include.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</body>
 </html>
