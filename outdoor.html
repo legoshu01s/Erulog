@@ -32,8 +32,57 @@ function initMap() {
         center: { lat: 35.6812, lng: 139.7671 },
         zoom: 12,
     });
+
+    // ▼ マーカー情報を配列で管理（好きなだけ増やせる）
+    const places = [
+        {
+            position: { lat: 35.6812, lng: 139.7671 },
+            title: "東京駅で買ったキャンプギア",
+            thumbnail: "images/test.png",
+            url: "article1.html"
+        },
+        {
+            position: { lat: 35.6895, lng: 139.6917 },
+            title: "新宿のアウトドアショップまとめ",
+            thumbnail: "images/test.png",
+            url: "article2.html"
+        }
+    ];
+
+    // ▼ マーカー生成ループ
+    places.forEach(place => {
+
+        // マーカー作成
+        const marker = new google.maps.Marker({
+            position: place.position,
+            map: map,
+        });
+
+        // サムネ付きのカスタム InfoWindow
+        const content = `
+            <div style="width:200px;">
+                <img src="${place.thumbnail}" style="width:100%; border-radius:6px;">
+                <h3 style="font-size:14px; margin:8px 0 4px;">${place.title}</h3>
+                <a href="${place.url}" style="color:#1a73e8; font-size:13px;" target="_blank">
+                    記事を読む →
+                </a>
+            </div>
+        `;
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: content
+        });
+
+        // クリック時に表示
+        marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+        });
+
+        // InfoWindow 内のリンクをクリックで記事に遷移（別タブ）
+    });
 }
 </script>
+
 
 <div class="background">
     <div class="long-sidebar">
