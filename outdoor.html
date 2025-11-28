@@ -33,55 +33,91 @@ function initMap() {
         zoom: 12,
     });
 
-    // ▼ マーカー情報を配列で管理（好きなだけ増やせる）
+    // 記事データ
     const places = [
         {
             position: { lat: 35.6812, lng: 139.7671 },
-            title: "東京駅で買ったキャンプギア",
-            thumbnail: "images/test.png",
+            title: "東京駅キャンプギア購入品",
+            thumbnail: "images/sample1.jpg",
             url: "article1.html"
         },
         {
             position: { lat: 35.6895, lng: 139.6917 },
-            title: "新宿のアウトドアショップまとめ",
-            thumbnail: "images/test.png",
+            title: "新宿アウトドアショップまとめ",
+            thumbnail: "images/sample2.jpg",
             url: "article2.html"
         }
     ];
 
-    // ▼ マーカー生成ループ
+    // ▼ カスタムサムネマーカー（常時表示）
     places.forEach(place => {
 
-        // マーカー作成
-        const marker = new google.maps.Marker({
-            position: place.position,
-            map: map,
-        });
+        class CustomMarker extends google.maps.OverlayView {
+            constructor(position, map, data) {
+                super();
+                this.position = position;
+                this.map = map;
+                this.data = data;
+                this.div = null;
+                this.setMap(map);
+            }
 
-        // サムネ付きのカスタム InfoWindow
-        const content = `
-            <div style="width:200px;">
-                <img src="${place.thumbnail}" style="width:100%; border-radius:6px;">
-                <h3 style="font-size:14px; margin:8px 0 4px;">${place.title}</h3>
-                <a href="${place.url}" style="color:#1a73e8; font-size:13px;" target="_blank">
-                    記事を読む →
-                </a>
-            </div>
-        `;
+            onAdd() {
+                this.div = document.createElement("div");
+                this.div.style.position = "absolute";
+                this.div.style.cursor = "pointer";
 
-        const infoWindow = new google.maps.InfoWindow({
-            content: content
-        });
+                // サムネ HTML
+                this.div.innerHTML = `
+                    <div style="
+                        width: 80px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                        background:#fff;
+                        transform: translate(-40px, -90px); 
+                    ">
+                        <img src="${this.data.thumbnail}" style="width:100%; display:block;">
+                        <div style="padding:4px; font-size:12px;">
+                            ${this.data.title}
+                        </div>
+                    </div>
+                `;
 
-        // クリック時に表示
-        marker.addListener("click", () => {
-            infoWindow.open(map, marker);
-        });
+                // クリックで記事へ飛ぶ
+                this.div.addEventListener("click", () => {
+                    window.location.href = this.data.url;
+                });
 
-        // InfoWindow 内のリンクをクリックで記事に遷移（別タブ）
+                const panes = this.getPanes();
+                panes.overlayMouseTarget.appendChild(this.div);
+            }
+
+            draw() {
+                const overlayProjection = this.getProjection();
+                const pos = overlayProjection.fromLatLngToDivPixel(
+                    new google.maps.LatLng(this.position.lat, this.position.lng)
+                );
+
+                if (this.div) {
+                    this.div.style.left = pos.x + "px";
+                    this.div.style.top = pos.y + "px";
+                }
+            }
+
+            onRemove() {
+                if (this.div) {
+                    this.div.parentNode.removeChild(this.div);
+                    this.div = null;
+                }
+            }
+        }
+
+        new CustomMarker(place.position, map, place);
     });
 }
 </script>
+
 
 
 <div class="background">
