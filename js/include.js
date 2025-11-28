@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!imgElement || !linkElement) return;
 
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 35.6812, lng: 139.7671 }, // 好きな中心地点（今は東京駅）
+          zoom: 12,
+        });
+      }
+      
       // --- post-card.html から情報取得 ---
       fetch("/common/post-card.html")
         .then(res => res.text())
@@ -71,3 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.insertAdjacentHTML("beforeend", processedHtml);
     });
 });
+
+  
+
+    
